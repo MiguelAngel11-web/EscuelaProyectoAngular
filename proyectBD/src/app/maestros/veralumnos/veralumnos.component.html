@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Mi lista de alumnos</h2>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre del alumno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <ng-container *ngFor="let a of server.alumnos_por_docente | keyvalue">
+                    <th scope="row">{{a.value['ID']}}</th>
+                    <td>{{a.value['NOM']}}</td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+</div>

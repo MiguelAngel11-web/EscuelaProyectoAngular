@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Salarios totales</h2>
+    <table class="table table-hover table-dark mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Departamento</th>
+                <th scope="col">Puesto</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let a of server.salario_tot | keyvalue">
+                <tr>
+
+                    <th scope="row">{{a.value['PUESTO']}}</th>
+                    <td>{{a.value['NOMB']}}</td>
+                    <td>${{a.value['SUM(SALARIO.CANTIDAD)']}}</td>
+
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

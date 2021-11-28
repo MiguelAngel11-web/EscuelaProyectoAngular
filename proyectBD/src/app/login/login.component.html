@@ -1,0 +1,94 @@
+<ng-container *ngIf="!server.login_al">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="../../assets/images/img-01.png" alt="IMG">
+                </div>
+
+                <form class="login100-form">
+                    <span class="login100-form-title">
+          Entra al aula(Alumnos)
+        </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="user" placeholder="Nombre de usuario" #user>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Password" #pass>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button type="button" (click)="Entrar(user.value,pass.value)" class="login100-form-btn">
+            Entrar
+          </button>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                        <a class="txt2" [routerLink]="['/login-teacher']">
+            ¿Eres docente?
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="server.login_al">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-100">
+                <ng-container *ngFor="let t of server.usuario_al |keyvalue">
+
+                    <!-- Portfolio Section-->
+                    <section class="page-section portfolio mt-4" id="portfolio">
+                        <div class="container">
+                            <h1>Bienvenido {{t.value['NOMB']}}</h1>
+                            <p class="txt2">Grado que cursas:{{t.value['GRADO']}}</p>
+                            <p class="txt2">STATUS:{{t.value['STATUS']}}</p>
+                            <!-- Portfolio Section Heading-->
+                            <h2 class="page-section-heading text-center text-uppercase text-secondary m-5">¿Que quieres hacer?</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Grid Items-->
+                            <div class="row justify-content-center">
+                                <!-- Portfolio Item 1-->
+                                <div class="col-md-6 col-lg-4 mb-5">
+
+                                    <!-- <img class="img-fluid" src="../../assets/images/matematicas.svg" alt="" /> -->
+                                    <a [routerLink]="['/calif',t.value['ID']]">Ver mis calificaciones</a>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <!-- Portfolio Item 1-->
+                                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+
+                                    <!-- <img class="img-fluid" src="../../assets/images/computacion.svg" alt="" /> -->
+                                    <a [routerLink]="['/faltas_al',t.value['ID']]">Ver mis faltas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</ng-container>

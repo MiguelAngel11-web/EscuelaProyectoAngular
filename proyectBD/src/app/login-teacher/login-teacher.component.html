@@ -1,0 +1,205 @@
+<ng-container *ngIf="!server.login_teacher">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="../../assets/images/img-01.png" alt="IMG">
+                </div>
+
+                <form class="login100-form">
+                    <span class="login100-form-title">
+        Entra al aula
+      </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input #user class="input100" type="text" name="user" placeholder="Nombre de usuario">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input #contra class="input100" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+        </span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button type="button" (click)="Entrar(user.value,contra.value)" class="login100-form-btn">
+          Entrar
+        </button>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                        <a class="txt2" [routerLink]="['/login']">
+          ¿Eres alumno?
+          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="server.login_teacher">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-dash100">
+                <ng-container *ngFor="let t of server.usuario_docente |keyvalue">
+
+                    <!-- Portfolio Section-->
+                    <section class="page-section portfolio mt-4" id="portfolio">
+                        <div class="container">
+                            <h1>Bienvenido {{t.value['NOMB']}}</h1>
+                            <p class="txt2-dash">Puesto Actual:{{t.value['PUESTO']}}</p>
+                            <!-- Portfolio Section Heading-->
+                            <h2 class="page-section-heading text-center text-uppercase text-secondary m-5">¿Que quieres hacer?</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Grid Items-->
+                            <div class="row justify-content-center">
+                                <!-- Portfolio Item 1-->
+                                <div class="col-md-6 col-lg-4 mb-5">
+
+                                    <!-- <img class="img-fluid" src="../../assets/images/matematicas.svg" alt="" /> -->
+                                    <a [routerLink]="['/veralumnos',t.value['ID']]">Ver mis alumnos</a>
+                                </div>
+                                <!-- Portfolio Item 2-->
+                                <div class="col-md-6 col-lg-4 mb-5">
+
+                                    <!-- <img class="img-fluid" src="../../assets/images/literatura.svg" alt="" />
+                                        -->
+                                    <a [routerLink]="['/extras']">Ver extraordinarios</a>
+                                </div>
+                                <!-- Portfolio Item 3-->
+                                <div class="col-md-6 col-lg-4 mb-5">
+
+                                    <!--  <img class="img-fluid" src="../../assets/images/historia.svg" alt="" /> -->
+                                    <a [routerLink]="['/faltas',t.value['ID']]">Ver faltas de mis alumnos</a>
+                                </div>
+                                <!-- Portfolio Item 4-->
+                                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <!-- <img class="img-fluid" src="../../assets/images/computacion.svg" alt="" /> -->
+                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Agregar alumno a materia</h2>
+                                    </div>
+                                </div>
+                                <!-- Portfolio Item 5-->
+                                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <!-- <img class="img-fluid" src="../../assets/images/fisica.svg" alt="" /> -->
+                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Agregar faltas</h2>
+                                    </div>
+                                </div>
+                                <!-- Portfolio Item 6-->
+                                <div class="col-md-6 col-lg-4">
+                                    <a [routerLink]="['/salarios']">Ver salarios totales</a>
+                                </div>
+                                <!-- Portfolio Item 7-->
+                                <div class="col-md-6 col-lg-4 mb-5 mt-5">
+                                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+                                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <!--   <img class="img-fluid" src="../../assets/images/deportes.svg" alt="" />
+                                        -->
+                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Ver reprobados</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Portfolio Modals-->
+
+                    <!-- Portfolio Modal 4-->
+                    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"><i class="fas fa-times"></i></span>
+              </button>
+                                <div class="modal-body text-center">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-8">
+                                                <!-- Portfolio Modal - Title-->
+                                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Agregar almno a materia</h2>
+                                                <!-- Icon Divider-->
+                                                <div class="divider-custom">
+                                                    <div class="divider-custom-line"></div>
+                                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                                    <div class="divider-custom-line"></div>
+                                                </div>
+                                                <!-- Portfolio Modal - Image-->
+                                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="" />
+                                                <!-- Portfolio Modal - Text-->
+                                                <input type="number" #id_al placeholder="ID de la materia">
+                                                <input type="number" #num placeholder="¿Cuántos van alumnos vas a añadir?">
+                                                <button class="btn btn-primary" type="button" (click)="AgregarAlumno(id_al.value,num.value)">Agregar</button>
+                                                <button class="btn btn-primary" data-dismiss="modal">
+                                  <i class="fas fa-times fa-fw"></i>
+                                  Close Window
+                              </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Modal 5-->
+                    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"><i class="fas fa-times"></i></span>
+              </button>
+                                <div class="modal-body text-center">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-8">
+                                                <!-- Portfolio Modal - Title-->
+                                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Agregar faltas</h2>
+                                                <!-- Icon Divider-->
+                                                <div class="divider-custom">
+                                                    <div class="divider-custom-line"></div>
+                                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                                    <div class="divider-custom-line"></div>
+                                                </div>
+                                                <!-- Portfolio Modal - Image-->
+                                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="" />
+                                                <!-- Portfolio Modal - Text-->
+                                                <input type="number" #id placeholder="id de faltas">
+                                                <input type="number" #ina placeholder="Inasistencias">
+                                                <button class="btn btn-primary" type="button" (click)="AgregarFaltas(id.value,ina.value)">Agregar</button>
+                                                <button class="btn btn-primary" data-dismiss="modal">
+                                  <i class="fas fa-times fa-fw"></i>
+                                  Close Window
+                              </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

@@ -1,0 +1,81 @@
+
+@baseURL = http://localhost:5000/consultas
+@contentType = application/json
+@createdAt = {{$datetime iso8601 -2 y}}
+@finalPeriod = {{$datetime iso8601 1 y}}
+
+###Docentes
+###Consultar todos los docentes de la bd
+GET {{baseURL}}/docente/getall
+
+###Consultar un docente por su id
+GET {{baseURL}}/docente/get/doc946328
+
+### Añadir un docente a la bd
+POST {{baseURL}}/docente/add
+Content-Type: {{contentType}}
+
+{
+    "nombre":"Juan Moises",
+    "ape_pat":"Lopez",
+    "ape_mat":"Gonzales",
+    "dire":"Turin de la Loma # 102",
+    "tel":"4492345678",
+    "turno":"Vespertino",
+    "sexo":"Masculino",
+    "puesto":"Profesor",
+    "salario":28765,
+    "departamento":"Centro de Ciencias Basicas"
+}
+
+###Actualizar datos
+PUT {{baseURL}}/docente/update/doc117416
+Content-Type: {{contentType}}
+
+{
+    "dire":"Santo Camino de Tomas # 109",
+    "tel":"4497894512",
+    "turno":"Matutino"
+}
+
+###Alumnos
+
+###Agregar alumno
+POST {{baseURL}}/al/add
+Content-Type: {{contentType}}
+
+{
+    "nombre" : "Jose Esteban",
+    "ape_pat":"Guzman",
+    "ape_mat":"Muñoz",
+    "dire":"Hualistcalo de Jikoln # 876",
+    "tel":"4495023165",
+    "grado":6,
+    "turno":"Matutino",
+    "sexo":"Masculino",
+    "edad":18,
+    "status":"Regular"
+}
+
+###Salario
+###Añadir salario
+POST {{baseURL}}/salario/add
+Content-Type: {{contentType}}
+
+{
+    "cantidad":28765,
+    "modalidad":"Quincenal",
+    "horas_extras":10,
+    "impuestos":["ISR","IVA","ISAN","IETU","IDE","ISN","Predial","DAP"],
+    "prestaciones":["aguinaldo","vacasiones","prima vacacional","prima dominical","dia de descanso semanal","licencia de paternidad","prima de antigüedad","utilidades"],
+    "periodo_inicial":"{{createdAt}}",
+    "periodo_final":"{{finalPeriod}}"
+}
+###Añadir departamento
+POST {{baseURL}}/depa/add
+Content-Type: {{contentType}}
+
+{
+    "nombre":"Centro de Ciencias Basicas",
+    "num_edificio":102
+}

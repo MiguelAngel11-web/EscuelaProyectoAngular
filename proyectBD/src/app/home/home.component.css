@@ -1,0 +1,29 @@
+.parallax {
+    /* The image used */
+    background-image: url("../../assets/images/home.jpg");
+    /* Set a specific height */
+    height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Centered text */
+
+.centered {
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+    font-size: 42px;
+    color: #fff;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-fluid {
+    margin-top: 30px;
+}
