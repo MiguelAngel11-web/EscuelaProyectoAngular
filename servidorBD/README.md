@@ -14,7 +14,7 @@ npm start
 ```
 
 ## :triangular_flag_on_post: ¿Que configurar para la conexión a mi BD? :triangular_flag_on_post: 
-Para que sea posible la comunicasión con la base de datos de MongoDB que quisieramos integrar. Debemos editar el [archivo](EscuelaProyectoAngular/servidorBD/src/db_apis/routes/db_connection.js)
+Para que sea posible la comunicasión con la base de datos de MongoDB que quisieramos integrar. Debemos editar el [archivo](/src/db_apis/routes/db-connection.js)
 
 ## 📖¿Dónde poner mis consultas?
 Fácil se van a la carpeta **src/db_apis/routes/db-consultas.js.** En esta están las GET, POST son las que he agregado en el link que le mande saque la información
