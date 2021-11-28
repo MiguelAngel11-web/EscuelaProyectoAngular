@@ -14,14 +14,15 @@ npm start
 ```
 
 ## :triangular_flag_on_post: ¿Que configurar para la conexión a mi BD? :triangular_flag_on_post: 
-Para que sea posible la comunicasión con la base de datos de MongoDB que quisieramos integrar. Debemos editar el [archivo](/src/db_apis/routes/db-connection.js)
+Para que sea posible la comunicasión con la base de datos de MongoDB que quisieramos integrar. Debemos editar el archivo **/src/db_apis/routes/db-connection.js**
+y sólo cambiamos **localhost/escuela** esos dos datos, en caso de que estemos haciendo localmente dejar localhost.
+## 📖¿Dónde se encuentan mis consultas?
+En la carpeta **src/db_apis/routes/db-consultas.js.** En esta están las GET, POST, PUT y DELETE, se pueden modificar sin problema y cada aparatado viene comentado
 
-## 📖¿Dónde poner mis consultas?
-Fácil se van a la carpeta **src/db_apis/routes/db-consultas.js.** En esta están las GET, POST son las que he agregado en el link que le mande saque la información
-
-Ahi agregan sus consultas y para que todos sepamos cuales llevamos tenemos el src/db_apis/index.js.
-
+En  **src/db_apis/index.js** se pueden ver que consultas puede realizar el sistema de base de datos.
+## Inicio de la ejecución
 Al ejecutar npm start y despues poner la ruta consultas podremos ver el contenido de ese index, en donde de manera resumida están las urls de nuestra api, las cuales
 se conectan a nuestra base de datos.
 
-## :rocket: Eso es todo, ánimo a trabajar :)
+## 🛠️ Pruebas de rutas
+Las pruebas se realizaron con la extension de Visual Studio Code llamada **REST Client** el archivo se encuentra en este mismo directorio y se llama **Peticiones.http**.
