@@ -1,27 +1,22 @@
-# School
+# Parte Front-End 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+Esta es la parte en la cual se visualisara la página y todos los elementos que interactuan con el usuario.
 
-## Development server
+### 📦 **Instalación**
+Para la instalación sólo debes ejecutar `npm install` y los modulos necesarios se instalaran.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 💻 Ejecutar el proyecto
+Simplemente en tu terminal ejecuta el siguiente comando
+```bash
+ng serve -o
+```
 
-## Code scaffolding
+o también
+```bash
+ng serve --open
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Y nos podremos ir a nuestra página en `http://localhost:4200/`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### 🚀 Y solo quedá disfrutar la página 🚀
