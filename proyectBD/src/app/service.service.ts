@@ -59,7 +59,7 @@ export class ServiceService {
   }
 
   async getInfo_Docente(id:any){
-    await this.http.get(`http://localhost:5000/consultas/docente/${id}`).subscribe( (docente:any) => {
+    await this.http.get(`http://localhost:5000/consultas/docente/get/${id}`).subscribe( (docente:any) => {
       this.usuario_docente = docente;
       if(this.usuario_docente){
         this.login_teacher = true;

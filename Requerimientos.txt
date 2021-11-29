@@ -1,0 +1,7 @@
+Web Socket para buscadores
+
+Buscador para alumno y maestro.
+
+Grafica para calificaciones y salarios.
+
+Reportes de PDF salario y faltas
